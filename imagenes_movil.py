@@ -1,11 +1,10 @@
-
 import pygame
 import os
 
 def Animar():
     
     pygame.init()
-
+    clock=pygame.time.Clock()
     # Configuración de la ventana
     size = (800, 335)
     screen = pygame.display.set_mode(size)
@@ -32,4 +31,6 @@ def Animar():
         if (i == dir.__len__()-1):
             break
         i+=1
+        clock.tick(40)
+
 

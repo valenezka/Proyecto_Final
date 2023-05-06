@@ -5,6 +5,7 @@ import imagenes_movil
 import menu2
 def iniciar_juego():
     pygame.init()
+    pygame.mixer.music.load("SnapSave.io - Life could be a dream;; Cars (Sub Español) (128 kbps).mp3")
     #Evaluamos dificultades
     if menu2.main_menu():
         dificultad=0
@@ -43,9 +44,10 @@ def iniciar_juego():
     # Configuración de la variable de juego que indica si se está ejecutando o no
     running = True
     tiempo_inicial=time.time()
-
+    pygame.mixer.music.play()
     # Loop principal del juego
     while running:
+        
         tiempo_actual=time.time()
         tiempo_transcurrido=tiempo_actual-tiempo_inicial
         # Manejo de eventos
@@ -86,6 +88,7 @@ def iniciar_juego():
 
             running = False
             imagenes_movil.Animar()
+            pygame.mixer.music.stop()
             return score
            
             
